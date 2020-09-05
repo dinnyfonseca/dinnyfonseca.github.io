@@ -6,7 +6,7 @@ OPTIMIZE = find $(DESTDIR) -not -path "*/static/*" \( -name '*.png' -o -name '*.
 xargs -0 -P8 -n2 mogrify -strip -thumbnail '1000>'
 
 .PHONY: all
-all: get_repository clean get build test cname deploy
+all: get_repository clean get build deploy
 
 .PHONY: get_repository
 get_repository:
@@ -39,11 +39,6 @@ build:
 
 	@echo "🧂 Optimizing images"
 	$(OPTIMIZE)
-
-.PHONY: test
-test:
-	@echo "🍜 Testing HTML"
-	docker run -v $(GITHUB_WORKSPACE)/$(DESTDIR)/:/mnt 18fgsa/html-proofer mnt --disable-external
 
 .PHONY: deploy
 deploy:
