@@ -1,6 +1,6 @@
 .POSIX:
 DESTDIR=public
-HUGO_VERSION=0.59.1
+HUGO_VERSION=0.74.3
 
 OPTIMIZE = find $(DESTDIR) -not -path "*/static/*" \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' \) -print0 | \
 xargs -0 -P8 -n2 mogrify -strip -thumbnail '1000>'
@@ -12,6 +12,7 @@ all: get_repository clean get build test cname deploy
 get_repository:
 	@echo "🛎 Getting Pages repository"
 	git checkout source
+	git submodule update --init --recursive
 	git clone https://$(TOKEN)@github.com/dinnyfonseca/dinnyfonseca.github.io.git $(DESTDIR)
 
 .PHONY: clean
