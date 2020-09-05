@@ -25,6 +25,8 @@ googleAnalytics = "UA-153647691-4"
 [params]
   # background = "black"
   backgroundImage = "/wallpaper.jpg"
+  # options from css: no-repeat, repeat, repeat-x or repeat-y
+  backgroundImageRepeat = "repeat"
   linkColor = "seagreen"
 
   author = "Dinny Fonseca"
@@ -39,9 +41,9 @@ googleAnalytics = "UA-153647691-4"
   utterancesRepo = "dinnyfonseca/dinnyfonseca.github.io"
   
   email = "dinnyariadne@gmail.com"
-  twitter = "dinny"
-  facebook = "g1eny0ung"
-  instagram = "g1eny0ung"
+  twitter = "ariadneassis"
+  facebook = "ariadne.assis"
+  instagram = "dinnyassis"
   youtube = "dinnyfonseca"
 
   siteStartYear = 2020
